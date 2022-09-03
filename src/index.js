@@ -55,7 +55,7 @@ function createMarkup(countries) {
       }) => `<article class="card">
     <img src="${flags.svg}" alt="${
         name.official
-      }" class="card-image" width="150 height="100"><h2 class="card-title">${
+      }" class="card-image" width="200" height="130"><h2 class="card-title">${
         name.official
       }</h2><ul class="card-list">
 <li class="card-text"><span class="card-info">Capital:</span>${capital}</li>
@@ -84,7 +84,8 @@ function onInputControl(countries) {
   } else if (countries.length > 1 && countries.length <= 10) {
     createCountryList(countries);
     clearMarkup();
-    Notify.merge('Please write the name of the country more accurate');
+
+    Notify.info('Please write the name of the country more accurate');
   } else if (countries.length === 1) {
     createMarkup(countries);
     clearCountryList();
